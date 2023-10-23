@@ -3,9 +3,15 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <Nullable>enable</Nullable>
+        <PackageId>SimpleSur.Logger</PackageId>
+        <Authors>rusden220</Authors>
+        <Company>rusden220</Company>
+        <Description>simple small logger</Description>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageProjectUrl>https://github.com/rusden220/SimpleSur.Logger</PackageProjectUrl>
         <RepositoryUrl>https://github.com/rusden220/SimpleSur.Logger</RepositoryUrl>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
 
 </Project>
