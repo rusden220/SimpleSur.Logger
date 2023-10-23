@@ -22,7 +22,7 @@ namespace SimpleSur.Logger
             return result;
         }
 
-        private static List<ILogger> GetDefaultLoggers()
+        public static List<ILogger> GetDefaultLoggers()
         {
             var result = new List<ILogger>
             {

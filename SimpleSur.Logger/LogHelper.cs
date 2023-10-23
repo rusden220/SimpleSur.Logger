@@ -2,8 +2,14 @@
 
 namespace SimpleSur.Logger
 {
-    public class LogHelper
+    public static class LogHelper
     {
+        public static void LogEnvironmentInfo(ILogger logger)
+        {
+            var info = GetEnvironmentInfo();
+            logger.LogInfo(info);
+        }
+        
         public static string GetEnvironmentInfo()
         {
             var os = Environment.OSVersion;

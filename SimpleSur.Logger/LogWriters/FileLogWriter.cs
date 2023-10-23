@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace SimpleSur.Logger.LogWriters
 {
@@ -19,6 +20,7 @@ namespace SimpleSur.Logger.LogWriters
             try
             {
                 LogToFile(msg, _path);
+                return;
             }
             catch (Exception e)
             {
@@ -33,7 +35,7 @@ namespace SimpleSur.Logger.LogWriters
         {
             lock (_lockObject)
             {
-                using var sw = new StreamWriter(path);
+                using var sw = new StreamWriter(path, true, Encoding.UTF8);
                 sw.WriteLine(msg);
             }
         }

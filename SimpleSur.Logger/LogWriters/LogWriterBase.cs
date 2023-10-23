@@ -7,14 +7,14 @@ namespace SimpleSur.Logger.LogWriters
 {
     public abstract class LogWriterBase: ILogger
     {
-        private const string MessageTemplate = "{0}|{1}|{2}:{3}";
+        private const string MessageTemplate = "{0}|{1}|{2}|{3}";
         
         private static readonly Dictionary<LogLevel, string> LogLevelToStringMapper = new Dictionary<LogLevel, string>()
         {
-            { LogLevel.Debug, "Dbg" },
-            { LogLevel.Info, "Inf" },
-            { LogLevel.Warn, "Wrn" },
-            { LogLevel.Error, "Err" },
+            { LogLevel.Debug, nameof(LogLevel.Debug) },
+            { LogLevel.Info, nameof(LogLevel.Info) },
+            { LogLevel.Warn, nameof(LogLevel.Warn) },
+            { LogLevel.Error, nameof(LogLevel.Error) },
         };
         
         
@@ -69,7 +69,7 @@ namespace SimpleSur.Logger.LogWriters
             var threadId = Thread.CurrentThread.ManagedThreadId;
             var stringLogLevel = ConvertLogLevelToString(logLevel);
 
-            return string.Format(MessageTemplate, utcDateTime, threadId, stringLogLevel, message);
+            return string.Format(MessageTemplate, utcDateTime.ToString("O"), threadId, stringLogLevel, message);
         }
     }
 }

@@ -29,6 +29,38 @@ namespace SimpleSur.Logger.LogWriters
             }
         }
         
+        public override void LogDebug(string msg)
+        {
+            foreach (var logger in _loggers)
+            {
+                logger.Log(LogLevel.Debug, msg);
+            }
+        }
+
+        public override void LogInfo(string msg)
+        {
+            foreach (var logger in _loggers)
+            {
+                logger.Log(LogLevel.Info, msg);
+            }
+        }
+
+        public override void LogWarn(string msg)
+        {
+            foreach (var logger in _loggers)
+            {
+                logger.Log(LogLevel.Warn, msg);
+            }
+        }
+
+        public override void LogError(string msg)
+        {
+            foreach (var logger in _loggers)
+            {
+                logger.Log(LogLevel.Error, msg);
+            }
+        }
+        
         protected override void LogMessage(LogLevel logLevel, string msg)
         {
             foreach (var logger in _loggers)
