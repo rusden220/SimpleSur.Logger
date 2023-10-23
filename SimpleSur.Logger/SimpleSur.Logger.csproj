@@ -3,6 +3,9 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/rusden220/SimpleSur.Logger</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/rusden220/SimpleSur.Logger</RepositoryUrl>
     </PropertyGroup>
 
 </Project>
